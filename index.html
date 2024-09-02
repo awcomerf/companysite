@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+      /* Reset default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      /* Set a professional sans-serif font */
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300; 
+      }
+  
+      /* Style for the video background */
+      .video-background {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+  
+      /* Navigation bar styling */
+      .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1%;
+        background-color: rgba(0, 0, 0,0); /* semi-transparent background */
+      }
+  
+      /* Logo styling */
+      .logo img {
+        height: 6vh; /* Adjust the logo height as needed */
+        cursor: pointer;
+      }
+  
+      /* Navigation links styling */
+      .nav-links {
+        display: flex;
+        gap: 1.5vw;
+      }
+  
+      .nav-links a {
+        color: black;
+        font-weight: bold ;
+        text-decoration: none;
+        font-size: 1.5vw; /* Scales with viewport width */
+        white-space: nowrap; /* Keeps text on one line */
+      }
+  
+      .nav-links a:hover {
+        font-size: 1.75vw;
+      }
+  
+      /* Centered content styling */
+      .center-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+        padding: 0 2%;
+        
+        white-space: nowrap; /* Ensures the title displays on one line */
+      }
+  
+      .center-content h1 {
+        font-size: 7vw; /* Scales with viewport width */
+        margin-bottom: .5vh;
+        white-space: nowrap; /* Ensures the title displays on one line */
+        color: white;
+      }
+      .center-content p {
+        font-size: 2vw;
+        font-weight: bold;
+        color: white;
+      }
+  
+      .center-content .cta-button {
+        display: inline-block;
+        padding: 1vh 4vw; /* Scales with viewport height and width */
+        font-size: 2vw; /* Scales with viewport width */
+        color: black;
+        border: 0.3vw solid black; /* Scales with viewport width */
+        border-radius: 2vh; /* Scales with viewport height */
+        text-decoration: none;
+        background-color: transparent;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+      }
+  
+      .center-content .cta-button:hover {
+        background-color: rgba(0, 0, 1,0.3);
+        color: white;
+      }
+      
+      .next-section {
+            height: 50vh; /* Keeps part of the video visible */
+             /* Adds space between sections */
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 2vh;
+        }
+        
+        .next-section img {
+            width: 40vw; /* Adjust as needed */
+            height: 40vh;
+            margin-right: 5%;
+            
+        }
+
+        .next-section .content {
+            width: 55vw;
+            height: 40vh;
+            text-align: left;
+        }
+
+        .next-section .content h2 {
+            font-size: 2.5vw;
+            margin-bottom: 1vh;
+            
+        }
+
+        .next-section .content p {
+            font-size: 1.5vw;
+            line-height: 1.6;
+        }
+        .video-section {
+            height: 33vh; /* Set the height to 33vh */
+            margin-top: 5vh; /* Add some space above the video section */
+            position: relative;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the entire section without distortion */
+        }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 0 3%;
+        }
+  
+        .center-content h1 {
+          font-size: 8vw;
+        }
+  
+        .center-content .cta-button {
+          font-size: 1.5vw;
+          padding: 1.5vh 5vw;
+        }
+        .next-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .next-section img {
+                width: 80%;
+                margin-right: 0;
+                margin-bottom: 2vh;
+            }
+
+            .next-section .content {
+                width: 100%;
+            }
+
+            .next-section .content h2 {
+                font-size: 4vw;
+            }
+
+            .next-section .content p {
+                font-size: 2.5vw;
+            }
+      }
+    </style>
+</head>
+<body>
+  <video autoplay muted loop class="video-background" id="background-video">
+    <source src="sunset.mp4" type="video/mp4" />
+    <source src="sunset.webm" type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="file.png" alt="Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+    <!-- Centered Content -->
+    <div class="center-content">
+      <h1>Alamo Consulting</h1>
+      <p>Small Business Technology Solutions</p>
+    </div>
+    
+    <div class="next-section" id="next-section">
+      <img src="whoweare.jpeg" alt="Who We Are">
+      <div class="content">
+        <h2>Who We Are</h2>
+        <p>
+            Alamo Consulting is dedicated to crafting highly customized solutions for small businesses. 
+            We specialize in implementing technology in ways that are often overlooked, ensuring that 
+            your business can leverage tech to its fullest potential.
+        </p>
+        <br>
+        <p>
+            Our approach is client-centric, focusing on understanding the unique challenges and opportunities
+            that each business faces. Whether it's optimizing your current systems, integrating new tools, or developing 
+            innovative strategies, our goal is to help you navigate the complex tech landscape with confidence.
+        </p>
+        
+    </div>
+    </div>
+     <!-- Video Section -->
+     
+    
+
+    
+</body>
+</html>
