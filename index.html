@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <style>
       /* Reset default margins and paddings */
@@ -56,10 +57,10 @@
       }
   
       .nav-links a {
-        color: black;
+        color: #3c4142;
         font-weight: bold ;
         text-decoration: none;
-        font-size: 1.5vw; /* Scales with viewport width */
+        font-size: 1.7vw; /* Scales with viewport width */
         white-space: nowrap; /* Keeps text on one line */
       }
   
@@ -92,50 +93,48 @@
         color: white;
       }
   
-      .center-content .cta-button {
-        display: inline-block;
-        padding: 1vh 4vw; /* Scales with viewport height and width */
-        font-size: 2vw; /* Scales with viewport width */
-        color: black;
-        border: 0.3vw solid black; /* Scales with viewport width */
-        border-radius: 2vh; /* Scales with viewport height */
-        text-decoration: none;
-        background-color: transparent;
-        font-weight: bold;
-        transition: background-color 0.3s, color 0.3s;
-      }
+      
   
-      .center-content .cta-button:hover {
-        background-color: rgba(0, 0, 1,0.3);
-        color: white;
-      }
+      
       
       .next-section {
+            margin-top: -1vh;
             height: 50vh; /* Keeps part of the video visible */
              /* Adds space between sections */
-            background-color: white;
+            background-color: #3c4142;
             display: flex;
             align-items: center;
             padding: 2vh;
+            opacity: 0;
+            transform: translateY(0px); /* Initial position */
+            transition: opacity 1s ease-out, transform 0s ease-out;
+        }
+
+        .next-section.visible {
+            opacity: 1;
+            transform: translateY(0); /* Move to original position */
+        
         }
         
         .next-section img {
-            width: 40vw; /* Adjust as needed */
+            width: 45vw; /* Adjust as needed */
             height: 40vh;
-            margin-right: 5%;
+            margin-right: 2vh;
             
         }
 
         .next-section .content {
+          
             width: 55vw;
             height: 40vh;
             text-align: left;
+            color: white;
         }
 
         .next-section .content h2 {
             font-size: 2.5vw;
             margin-bottom: 1vh;
-            
+            color: white;
         }
 
         .next-section .content p {
@@ -153,42 +152,158 @@
             height: 100%;
             object-fit: cover; /* Ensures the video covers the entire section without distortion */
         }
+        .image-section {
+            width: 100%;
+            height: 40vh; /* Fixed height */
+            overflow: hidden; /* Ensures image doesn't overflow */
+            position: relative;
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintains aspect ratio and covers the container */
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #next-section1 {
+            margin-top: 0;
+            padding: 2vh;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5vh 2vw; /* Adjust padding as needed */
+            background-color: #3c4142; /* Add a background color to distinguish it */
+        }
+
+        #next-section1 .text-content {
+            width: 50%;
+            padding-right: 2vw; /* Space between text and image */
+        }
+
+        #next-section1 h2 {
+          font-size: 2.5vw;
+            margin-bottom: 1vh;
+            color: white;
+        }
+
+        #next-section1 p {
+            font-size: 1.35vw;
+            line-height: 1.6;
+            color: white;
+        }
+
+        #next-section1 .image-content {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #next-section1 .image-content img {
+            width: 50vw; /* Adjust as needed */
+            height: 50vh;
+            padding-right: 2vh;
+            padding-left: 2vh;
+            
+        }
+        .newsletter-section {
+            position: relative;
+            height: 60vh;
+            background-image: url('AdobeStock_444293528.jpeg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-section h2 {
+            font-size: 4vw;
+            margin-bottom: 2vh;
+            font-weight: bolder;
+        }
+
+        .newsletter-section form {
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            gap: 1vw;
+            flex-direction: column;
+        }
+
+        .newsletter-section input[type="email"] {
+            width: 25vw;
+            padding: 1vh 2vw;
+            font-size: 2vw;
+            border: none;
+            border-bottom: 1px solid white;
+            background: transparent;
+            color: white;
+            outline: none;
+            text-align: center;
+            margin-bottom: 2vh;
+            font-weight: bolder;
+        }
+        
+
+        .newsletter-section input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 1);
+            font-size: 1.5vw;
+            
+        }
+
+        .newsletter-section button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 2.5vw;
+            padding: 0;
+            margin-left: -5vw; /* Adjust spacing between input and button */
+            transform: translateY(3%); /* Adjust button alignment */
+            font-weight: bolder;
+        }
+        .newsletter-section button::before {
+            content: '→';
+        }
+        .footer {
+            background-color: #3c4142; /* Dark grey background */
+            color: white; /* White text color */
+            text-align: center; /* Center-align text */
+            padding: 2vh 0; /* Padding for spacing */
+            font-size: 1.5vw; /* Responsive font size */
+            position: relative;
+            width: 100%;
+        }
+
+        /* Social media icons styling */
+        .footer .social-icons {
+            margin-top: 1vh; /* Space above the icons */
+        }
+
+        .footer .social-icons a {
+            color: white; /* Icon color */
+            font-size: 2vw; /* Responsive icon size */
+            margin: 0 1vw; /* Space between icons */
+            text-decoration: none;
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .footer .social-icons a:hover {
+            color: #aaa; /* Light grey color on hover */
+        }
       /* Responsive adjustments */
       @media (max-width: 768px) {
-        .navbar {
-          padding: 0 3%;
-        }
-  
-        .center-content h1 {
-          font-size: 8vw;
-        }
-  
-        .center-content .cta-button {
-          font-size: 1.5vw;
-          padding: 1.5vh 5vw;
-        }
-        .next-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .next-section img {
-                width: 80%;
-                margin-right: 0;
-                margin-bottom: 2vh;
-            }
-
-            .next-section .content {
-                width: 100%;
-            }
-
-            .next-section .content h2 {
-                font-size: 4vw;
-            }
-
-            .next-section .content p {
-                font-size: 2.5vw;
-            }
+        
       }
     </style>
 </head>
@@ -205,9 +320,10 @@
       <img src="file.png" alt="Logo" />
     </div>
     <div class="nav-links">
-      <a href="#home">Home</a>
+    
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
+      <a href="#services">About Us</a>
     </div>
   </div>
 
@@ -218,7 +334,7 @@
     </div>
     
     <div class="next-section" id="next-section">
-      <img src="whoweare.jpeg" alt="Who We Are">
+      <img src="AdobeStock_220359623.jpeg" alt="Who We Are">
       <div class="content">
         <h2>Who We Are</h2>
         <p>
@@ -235,10 +351,58 @@
         
     </div>
     </div>
-     <!-- Video Section -->
-     
-    
+    <div class="image-section">
+      <img src="AdobeStock_508851419.jpeg" alt="Full Width Image" class="full-width-image">
+    </div>
+    <div class="next-section" id="next-section1">
+      <div class="text-content">
+          <h2>Our Story</h2>
+          <p>
+            Alex Comerford founded Alamo Consulting after seeing many small businesses struggle to integrate technology effectively. He noticed how outdated websites and underutilized analytics tools prevented businesses from reaching their full potential. These recurring issues inspired Alex to create a solution that would address the unique tech challenges small businesses face.
+        </p>
+        <br>
+        <p>
+          Alamo Consulting was established to provide tailored tech solutions that help small businesses operate more efficiently. From creating engaging websites to implementing analytics for better decision-making, Alex’s goal is to empower small businesses to fully leverage technology, ensuring they can thrive in a digital landscape.
+        </p>
+      </div>
+      <div class="image-content">
+          <img src="cuse.jpg" alt="Who We Are Image">
+      </div>
+  </div>
+  <div class="newsletter-section">
+    <h2>Sign Up for Our Weekly Newsletter</h2>
+    <form action="your-submission-url" method="post">
+        <input type="email" name="email" placeholder="Enter Email..." required>
+        <button type="submit"></button>
+    </form>
+    </div>
+    <footer class="footer">
+      <p>All rights reserved &bull; Alamo Consulting</p>
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+   </footer>
+
 
     
 </body>
+<script>
+        
+        function handleScroll() {
+            const elements = document.querySelectorAll('.next-section');
+
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll); // To check on initial load
+    </script>
 </html>
